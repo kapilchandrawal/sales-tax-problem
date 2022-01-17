@@ -2,7 +2,7 @@ class Product
 
   def initialize(item_name, price, exempt, imported)
     @item_name = item_name
-    @price = price
+    @price = price.to_f
     @exempt = exempt
     @imported = imported
     @tax = 0
