@@ -23,6 +23,7 @@ class Product
     end
   end
 end
+<<<<<<< HEAD
 
 # Create Objects that will be products:-
 book = Product.new("Thor", 12.49, true, false)
@@ -36,3 +37,5 @@ new_receipt.add_to_receipt(cd)
 new_receipt.add_to_receipt(chocolate)
 
 puts new_receipt.print_list
+=======
+>>>>>>> 0992bbc34e4d260e0fe654fc144a67478b5bff8b
