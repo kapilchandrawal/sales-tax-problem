@@ -1,0 +1,10 @@
+qty,item_name,price,exempt,imported
+1,book,12.49,TRUE,FALSE
+1,music CD,14.99,FALSE,FALSE
+1,chocolate bar,0.85,FALSE,FALSE
+1,box of chocolates,10,FALSE,TRUE
+1,bottle of perfume,47.5,FALSE,TRUE
+1,bottle of perfume ,27.99,FALSE,TRUE
+1,bottle of perfume,18.99,FALSE,FALSE
+1,packet of headache pills ,9.75,FALSE,FALSE
+1,box of chocolates,11.25,FALSE,TRUE
