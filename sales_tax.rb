@@ -1,7 +1,7 @@
 require_relative("print_receipt.rb")
 
-$exmpt = ["chocolates","book","pills","chocolate"]
-$products_arr = []
+EXEMPT = %w[chocolates, book, pills, chocolate]
+PRODUCTS_ARR = []
 
 class Product
   attr_accessor :qty, :item_name, :price, :exempt, :imported, :tax
@@ -30,7 +30,6 @@ class Product
   end
 end
 
-# puts "Enter Values: "
 no = 0
 puts "Number of products?"
 no = gets.chomp.to_i
@@ -50,7 +49,7 @@ while no > 0
   # puts product && $EXEMPT
   chck_product = product.slice! "imported".strip
   product = product.strip
-  $exmpt.each do |px|
+  EXEMPT.each do |px|
     if px.eql?(product)
       exempt = true
       # puts product
@@ -60,14 +59,14 @@ while no > 0
   
   # puts imported, exempt
   products = Product.new(qty, product, price, exempt, imported, 0)  
-  $products_arr.push(products)
+  PRODUCTS_ARR.push(products)
 
   no-=1 
 end
 
 new_receipt = Receipt.new
 
-$products_arr.each do |prod|
+PRODUCTS_ARR.each do |prod|
   new_receipt.add_to_receipt(prod)
 end
 
