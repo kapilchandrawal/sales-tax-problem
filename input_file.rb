@@ -17,8 +17,9 @@ class Entry
       price = split_data[-1].to_f
       p = data.split(" at ")
       product1 = p[0].delete("/0-9/")
-      prd = product1.strip
+      # prd = product1.strip
       product = product1.strip
+      puts product
       exempt = false
       imported = false
       
@@ -33,15 +34,16 @@ class Entry
       if product.include?('imported')
         imported = true
       end
-      chck_product = product.slice! "imported".strip
-      product = product.strip
+      # chck_product = product.slice! "imported".strip
+      # product = product.strip
+      puts product
       @@exe.each do |px|
         if product.include?(px)
           exempt = true
           break
         end
       end
-      products = Product.new(qty, prd, price, exempt, imported, 0)
+      products = Product.new(qty, product, price, exempt, imported, 0)
       @@products_arr.push(products)
       products.calculate_tax
       no -= 1
