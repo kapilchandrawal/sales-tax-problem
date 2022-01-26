@@ -5,6 +5,7 @@ class Receipt
     @tax_total = 0
     @qty_total = 0
   end
+  
   def add_to_receipt(item)
     @list << item
     item.calculate_tax

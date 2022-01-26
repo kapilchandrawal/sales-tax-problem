@@ -1,10 +1,11 @@
 require_relative("sales_tax.rb")
 require_relative("print_receipt.rb")
 
-PRODUCTS_ARR = []
-EXEMPT = %w[chocolates book pills chocolate]
 
 class Entry
+
+  @@products_arr = []
+  @@exe = %w[chocolates book pills chocolate]
   def input
     no = 0
     puts "Number of products?"
@@ -34,22 +35,21 @@ class Entry
       end
       chck_product = product.slice! "imported".strip
       product = product.strip
-      EXEMPT.each do |px|
+      @@exe.each do |px|
         if product.include?(px)
           exempt = true
           break
         end
-        puts px
       end
       products = Product.new(qty, prd, price, exempt, imported, 0)
-      PRODUCTS_ARR.push(products)
+      @@products_arr.push(products)
       products.calculate_tax
       no -= 1
     end
   end
   def print_rec
     new_receipt = Receipt.new
-    PRODUCTS_ARR.each do |prod|
+    @@products_arr.each do |prod|
       new_receipt.add_to_receipt(prod)
     end
     new_receipt.print_list
