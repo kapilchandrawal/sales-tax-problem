@@ -31,12 +31,9 @@ class Entry
         puts "Please enter valid value"
         break
       end
-      if product.include?('imported')
-        imported = true
-      end
-      # chck_product = product.slice! "imported".strip
-      # product = product.strip
-      puts product
+      product.include?('imported') ? imported = true : imported
+      #   imported = true
+      # end
       @@exe.each do |px|
         if product.include?(px)
           exempt = true
