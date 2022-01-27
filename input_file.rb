@@ -1,9 +1,7 @@
 require_relative("sales_tax.rb")
 require_relative("print_receipt.rb")
 
-
 class Entry
-
   @@products_arr = []
   @@exe = %w[chocolates book pills chocolate]
   def input
@@ -32,8 +30,6 @@ class Entry
         break
       end
       product.include?('imported') ? imported = true : imported
-      #   imported = true
-      # end
       @@exe.each do |px|
         if product.include?(px)
           exempt = true

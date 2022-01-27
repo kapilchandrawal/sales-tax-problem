@@ -16,9 +16,9 @@ class Receipt
 
   def print_list
     @list.each do |product|
-      puts "#{product.qty} #{product.item_name}: #{((product.price + product.tax)*20).round/20.0}"
+      puts "#{ product.qty } #{ product.item_name } : #{ ((product.price + product.tax) * 20).round / 20.0 }"
     end
-    puts "Sales Taxes: #{(@tax_total*20).round/20.0}"
-    puts "Total: #{(@price_total*20).round/20.0 + (@tax_total*20).round/20.0}"
+    puts "Sales Taxes: #{ (@tax_total * 20).round / 20.0 }"
+    puts "Total: #{ (@price_total * 20).round / 20.0 + (@tax_total * 20).round / 20.0 }"
   end
 end
